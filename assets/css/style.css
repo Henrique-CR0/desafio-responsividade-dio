@@ -1,0 +1,400 @@
+/* ===========================================================
+   Discord Landing Page | Desafio Responsividade DIO
+   Cores oficiais do Discord (Blurple) | Foco em Responsividade
+   =========================================================== */
+
+:root {
+  /* Paleta oficial do Discord */
+  --blurple: #5865f2;
+  --blurple-escuro: #4752c4;
+  --fundo-claro: #ffffff;
+  --fundo-cinza: #f6f6f6;
+  --fundo-escuro: #23272a;
+  --fundo-hero: #404eed;   /* azul do hero */
+  --texto-escuro: #23272a;
+  --texto-claro: #ffffff;
+  --texto-cinza: #4f5660;
+  --fonte: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte);
+  color: var(--texto-escuro);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===================== BOTÕES (reutilizáveis) ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 28px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn--big {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+.btn--light {
+  background-color: var(--fundo-claro);
+  color: var(--texto-escuro);
+}
+
+.btn--light:hover {
+  color: var(--blurple);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn--dark {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-claro);
+}
+
+.btn--dark:hover {
+  background-color: #36393f;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn--blurple {
+  background-color: var(--blurple);
+  color: var(--texto-claro);
+}
+
+.btn--blurple:hover {
+  background-color: var(--blurple-escuro);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  background-color: var(--fundo-hero);
+  padding: 20px 0;
+}
+
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar__logo i {
+  font-size: 1.8rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar__links a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navbar__links a:hover {
+  text-decoration: underline;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Botão hambúrguer (escondido no desktop) */
+.navbar__toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--texto-claro);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  background-color: var(--fundo-hero);
+  color: var(--texto-claro);
+  padding: 60px 24px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero__content {
+  max-width: 550px;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 3rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.hero__content p {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__image img {
+  border-radius: 8px;
+}
+
+/* ===================== SEÇÕES DE FEATURE ===================== */
+.feature {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* alterna a ordem: imagem à esquerda ou à direita */
+.feature--right {
+  flex-direction: row-reverse;
+}
+
+/* fundo cinza alternado para dar ritmo visual */
+.feature--right {
+  background-color: var(--fundo-cinza);
+  max-width: 100%;
+}
+
+.feature--right .feature__image,
+.feature--right .feature__text {
+  max-width: 1200px;
+}
+
+.feature__image {
+  flex: 1;
+}
+
+.feature__image img {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.feature__text {
+  flex: 1;
+}
+
+.feature__text h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--texto-escuro);
+}
+
+.feature__text p {
+  font-size: 1.1rem;
+  color: var(--texto-cinza);
+}
+
+/* ===================== CTA (chamada final) ===================== */
+.cta {
+  text-align: center;
+  padding: 80px 24px;
+  background-color: var(--fundo-cinza);
+}
+
+.cta__image {
+  max-width: 300px;
+  margin: 0 auto 24px;
+  border-radius: 8px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  color: var(--texto-escuro);
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-claro);
+  padding: 60px 24px 24px;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.footer__brand .navbar__logo {
+  color: var(--blurple);
+  margin-bottom: 16px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 20px;
+  font-size: 1.4rem;
+}
+
+.footer__social a {
+  color: var(--texto-claro);
+}
+
+.footer__social a:hover {
+  color: var(--blurple);
+}
+
+.footer__columns {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__col h3 {
+  color: var(--blurple);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.footer__col a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer__col a:hover {
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #40444b;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #b9bbbe;
+}
+
+/* ===========================================================
+   RESPONSIVIDADE — o coração deste desafio
+   =========================================================== */
+
+/* Tablets (até 900px) */
+@media (max-width: 900px) {
+  /* esconde os links do menu e mostra o hambúrguer */
+  .navbar__links {
+    display: none;
+  }
+  .navbar__toggle {
+    display: block;
+  }
+
+  /* hero empilha em coluna */
+  .hero {
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+
+  .hero__content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* seções empilham em coluna, sempre imagem em cima */
+  .feature,
+  .feature--right {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .feature__text h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 600px) {
+  .hero__content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero__content p {
+    font-size: 1rem;
+  }
+
+  /* botões ocupam largura total e empilham */
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .btn--big {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* footer empilha tudo */
+  .footer__container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__columns {
+    gap: 32px;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+}
